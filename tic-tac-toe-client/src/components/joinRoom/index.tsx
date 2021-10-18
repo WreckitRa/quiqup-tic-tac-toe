@@ -4,7 +4,7 @@ import gameContext from "../../gameContext";
 import gameService from "../../services/gameService";
 import socketService from "../../services/socketService";
 
-interface IJoinRoomProps {}
+export interface IJoinRoomProps {}
 
 const JoinRoomContainer = styled.div`
   width: 100%;
@@ -76,15 +76,17 @@ export function JoinRoom(props: IJoinRoomProps) {
   };
 
   return (
-    <form onSubmit={joinRoom}>
+    <form data-testid="room-form" onSubmit={joinRoom}>
       <JoinRoomContainer>
         <h4>Enter Room ID to Join the Game</h4>
         <RoomIdInput
+          data-testid="roomName"
+          name="roomName"
           placeholder="Room ID"
           value={roomName}
           onChange={handleRoomNameChange}
         />
-        <JoinButton type="submit" disabled={isJoining}>
+        <JoinButton type="submit" data-testid="submit" disabled={isJoining}>
           {isJoining ? "Joining..." : "Joing"}
         </JoinButton>
       </JoinRoomContainer>

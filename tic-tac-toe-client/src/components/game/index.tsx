@@ -7,7 +7,7 @@ import socketService from "../../services/socketService";
 const GameContainer = styled.div`
   display: flex;
   flex-direction: column;
-  font-family: "Zen Tokyo Zoo", cursive;
+  /* font-family: "Zen Tokyo Zoo", cursive; */
   position: relative;
 `;
 
@@ -29,7 +29,6 @@ const Cell = styled.div<ICellProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
   cursor: pointer;
   border-top: ${({ borderTop }) => borderTop && "3px solid #8e44ad"};
   border-left: ${({ borderLeft }) => borderLeft && "3px solid #8e44ad"};
@@ -54,7 +53,7 @@ const PlayStopper = styled.div`
 
 const X = styled.span`
   font-size: 100px;
-  color: #8e44ad;
+  color: #8e44ae;
   &::after {
     content: "X";
   }
@@ -62,7 +61,7 @@ const X = styled.span`
 
 const O = styled.span`
   font-size: 100px;
-  color: #8e44ad;
+  color: #99ae44;
   &::after {
     content: "O";
   }
